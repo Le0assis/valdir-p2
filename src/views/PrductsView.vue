@@ -35,6 +35,7 @@
             console.log(results)
 
             products.value = results.map(product => ({
+                id: product.id,
                 title: product.title,
                 category: product.category,
                 description: product.description,

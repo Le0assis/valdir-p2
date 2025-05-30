@@ -16,11 +16,13 @@
       <span class="text-green-600 font-bold">$ {{ product.price }}</span>
       <span class="text-yellow-500">⭐ {{ product.rating }}</span>
     </div>
+    <router-link :to="`/products/${product.id}`">Ver detalhes</router-link>
+
   </div>
 </template>
 
 <script setup>
     defineProps({
-    product: Object
+      product: Object
     });
 </script>
