@@ -1,7 +1,7 @@
 <template>
   <div
-    class="rounded-2xl p-4 text-black shadow-md bg-white hover:shadow-xl 
-    transition-shadow duration-300 transform hover:scale-105  flex flex-col justify-between h-full "
+    class="max-w-xs w-full mx-auto bg-white rounded-xl shadow-md overflow-hidden
+     hover:scale-105 transition-transform duration-300 p-2 items-center text-center"
   >
 
     <img
@@ -16,11 +16,11 @@
     </h2>
 
      
-    <p class="text-sm text-gray-500 mb-2 capitalize">{{ product.category }}</p>
+    <p class="hidden sm:block text-sm text-gray-500 mb-2 capitalize">{{ product.category }}</p>
 
     <div class="flex items-center justify-between text-sm mb-3">
       <span class="text-green-600 font-bold">$ {{ product.price }}</span>
-      <span class="text-yellow-500 flex items-center gap-1">
+      <span class="text-yellow-500 flex items-center ">
         ⭐ {{ product.rating }}
       </span>
       <span class="text-blue-600 font-medium flex items-center gap-1 whitespace-nowrap">

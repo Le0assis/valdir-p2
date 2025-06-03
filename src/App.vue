@@ -8,7 +8,7 @@ import Footer from './components/FooterComponent.vue'
 <template >
   <Header />
 
-  <div class="bg-blue-200 p-8 h-screen">
+  <div class="bg-blue-200 p-8 h-full">
     <RouterView />
   </div>
   <Footer />
