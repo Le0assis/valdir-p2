@@ -2,6 +2,7 @@
     <div>
         <div class="relative w-full md:w-[500px] mx-auto items-center border border-gray-300">
             <div class="relative">
+                <!-- Barra de pesquisa -->
                 <input
                     type="text"
                     v-model="search"
@@ -14,6 +15,7 @@
                     class="absolute z-50 bg-white w-full border border-gray-300 rounded shadow max-h-60 overflow-y-auto"
                 >
                     <ul>
+                        <!-- Resultados da pesquisa -->
                     <li
                         v-for="product in filteredProducts"
                         :key="product.id"
@@ -39,7 +41,8 @@
             <div v-if="showMenu"
             class="absolute right-0 top-full w-48 bg-blue-100 border border-gray-200 rounded shadow-lg z-50">
                 <h2 class="text-lg font-semibold text-slate-800 text-center">Categorias</h2>
-                <ul class="px-5 ">
+                <ul class="px-5 max-h-60 overflow-y-auto">
+                    <!-- Separa e lista as categorias -->
                     <li
                         v-for="cat in categories"
                         :key="cat"
@@ -51,7 +54,7 @@
             </div>
         </div>
 
-
+        <!-- cards dos produtos -->
         <div class="grid grid-cols-2 md:grid-cols-4 md:grid-raws-3 lg:-grid-cols-6 gap-8 mt-8">
             <ProductCard
                 v-for="p in products"
@@ -60,7 +63,7 @@
             />
 
         </div>
-        
+        <!-- Botões paginação -->
         <div class="flex justify-center gap-4 m-6">
             <button @click = "previusProducts" :disabled = "offset === 0" class="btn font-bold bg-blue-400 text-black px-4 py-2 rounded hover:bg-blue-700 hover:text-white disabled:bg-gray-300">
                 Back</button>
