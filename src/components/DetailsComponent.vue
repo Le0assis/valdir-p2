@@ -1,33 +1,41 @@
 <template>
-  <div class="p-4 border rounded flex flex-col md:flex-row items-center md:items-start gap-4 bg-red-100">
-    <img 
-      :src="product.thumbnail"
-      :alt="product.title"
-      class="w-full sm:w-2/3 md:w-1/4 h-auto object-cover rounded shadow-lg md:m-8"
-    > 
-    <div class="flex flex-col justify-between h-full w-full md:mt-8 gap-4">
+<div class="p-6 border rounded-2xl flex flex-col md:flex-row gap-6 bg-blue-200 shadow-md">
+  <img 
+    :src="product.thumbnail"
+    :alt="product.title"
+    class="w-full sm:w-2/3 md:w-1/3 h-auto object-cover rounded-xl shadow-lg"
+  > 
 
-      <div class="md:flex-1 md:p-8 text-left">
-        <h1 class="text-xl font-bold mb-2">{{ product.title }}</h1>
-        <p class="mb-2">{{ product.description }}</p>
-      </div>
+  <div class="flex flex-col justify-between w-full gap-6">
+    
 
-      <div class="flex items-center text-center mt-4 md:p-8 gap-4">
-          <router-link class="pt-1 " to="/products">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left " viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
-            </svg>
-          </router-link>
-          <p class="text-2xl text-green-500 self-end flex ">${{ product.price }}</p>
-          <button @click="toggleCart" class="p-2">
-          <span v-if="inCart" v-html="cartFilled" />
-          <span v-else v-html="cartOutline" />
-          </button>
-
-      </div>
-
+    <div class="text-left space-y-3">
+      <h1 class="text-2xl font-extrabold text-gray-800">{{ product.title }}</h1>
+      <p class="text-gray-700 leading-relaxed">{{ product.description }}</p>
     </div>
+
+    <div class="flex flex-wrap items-center justify-between gap-4 border-t pt-4">
+      <router-link
+        class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800 transition"
+        to="/products"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
+        </svg>
+        <span>Voltar</span>
+      </router-link>
+
+      <p class="text-2xl font-bold text-emerald-600">${{ product.price }}</p>
+
+      <button @click="toggleCart" class="text-gray-700 hover:text-black transition">
+        <span v-if="inCart" v-html="cartFilled" />
+        <span v-else v-html="cartOutline" />
+      </button>
+    </div>
+
   </div>
+</div>
+
 </template>
 
 <script setup>

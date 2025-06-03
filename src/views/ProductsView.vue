@@ -6,7 +6,7 @@
                     type="text"
                     v-model="search"
                     placeholder="Buscar produto..."
-                    class="w-full p-3 border border-gray-300 rounded"
+                    class="w-full p-3 border border-gray-300 rounded bg-gray-200 "
                 />
 
                 <div
@@ -37,14 +37,14 @@
             </div>
 
             <div v-if="showMenu"
-            class="absolute right-0 top-full w-48 bg-white border border-gray-200 rounded shadow-lg z-50">
-                <h2 class="font-bold mb-3">Categorias</h2>
-                <ul class="space-y-2">
+            class="absolute right-0 top-full w-48 bg-blue-100 border border-gray-200 rounded shadow-lg z-50">
+                <h2 class="text-lg font-semibold text-slate-800 text-center">Categorias</h2>
+                <ul class="px-5 ">
                     <li
                         v-for="cat in categories"
                         :key="cat"
                         @click="filterByCategory(cat)"
-                        class="cursor-pointer text-sm hover:underline capitalize">
+                        class="cursor-pointer text-sm hover:underline capitalize hover:bg-blue-300 border border-black p-1">
                         {{ cat }}
                     </li>
                 </ul>
@@ -62,9 +62,9 @@
         </div>
         
         <div class="flex justify-center gap-4 m-6">
-            <button @click = "previusProducts" :disabled = "offset === 0" class="btn font-bold bg-purple-400 text-black px-4 py-2 rounded hover:bg-purple-700 hover:text-white disabled:bg-gray-300">
+            <button @click = "previusProducts" :disabled = "offset === 0" class="btn font-bold bg-blue-400 text-black px-4 py-2 rounded hover:bg-blue-700 hover:text-white disabled:bg-gray-300">
                 Back</button>
-            <button @click = "nextProducts" class="btn font-bold bg-purple-400 text-black px-4 py-2 rounded hover:bg-purple-700 hover:text-white ">
+            <button @click = "nextProducts" class="btn font-bold bg-blue-400 text-black px-4 py-2 rounded hover:bg-blue-700 hover:text-white ">
                 Next</button>
         </div>
 

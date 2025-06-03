@@ -1,7 +1,7 @@
 <template>
   <div
-    class="max-w-xs w-full mx-auto bg-white rounded-xl shadow-md overflow-hidden
-     hover:scale-105 transition-transform duration-300 p-2 items-center text-center"
+    class="max-w-xs w-full mx-auto bg-white rounded-xl shadow-sm overflow-hidden border border-slate-200 items-center
+     hover:scale-105 hover:shadow-blue-800 hover:shadow-md transition-shadow duration-400 p-2  text-center"
   >
 
     <img
@@ -11,7 +11,7 @@
     />
 
      
-    <h2 class="text-left capitalize font-semibold text-lg mb-1 line-clamp-2">
+    <h2 class="text-lg font-semibold text-slate-800 text-center">
       {{ product.title }}
     </h2>
 
@@ -19,8 +19,8 @@
     <p class="hidden sm:block text-sm text-gray-500 mb-2 capitalize">{{ product.category }}</p>
 
     <div class="flex items-center justify-between text-sm mb-3">
-      <span class="text-green-600 font-bold">$ {{ product.price }}</span>
-      <span class="text-yellow-500 flex items-center ">
+      <span class="text-emerald-600 font-bold">$ {{ product.price }}</span>
+      <span class="text-yellow-500 flex items-center  ">
         ⭐ {{ product.rating }}
       </span>
       <span class="text-blue-600 font-medium flex items-center gap-1 whitespace-nowrap">
@@ -29,7 +29,7 @@
     </div>
 
     <router-link :to="`/products/${product.id}`" class="mt-auto bg-blue-600 hover:bg-blue-700 text-white text-sm 
-    font-semibold py-2 px-4 rounded-lg">
+    font-semibold py-1 px-3 rounded-lg font-medium rounded">
         Ver detalhes
     </router-link>
   </div>
